@@ -1,0 +1,67 @@
+.boton {
+    position: relative;
+    padding: 2rem 4rem;
+    color: #fff;
+    font-size: 1.8em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 4px 10px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+
+    transition: transform 300ms, box-shadow 300ms;
+
+    &__progreso {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0.5;
+    }
+
+    &__loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        border-top-color: transparent;
+        z-index: 10;
+
+        animation: 1s aparecer forwards 300ms, 1s rotar linear infinite;
+    }
+
+    &__texto {
+        position: relative;
+        opacity: 1;
+        z-index: 10;
+        transition: opacity 300ms;
+    }
+}
+
+.presionado {
+    transform: translateY(4px);
+    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.4);
+}
+
+.completado {
+    transform: translateY(8px);
+    box-shadow: none;
+}
+
+@keyframes rotar {
+    from { transform: translate(-50%, -50%); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes aparecer {
+    to { opacity: 1; }
+}

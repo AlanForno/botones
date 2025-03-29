@@ -1,0 +1,13 @@
+<button 
+    class="boton"
+    [style.background-color]="color" 
+    [disabled]="progresoCompletado"
+    [ngClass]="{completado: progresoCompletado, presionado: mousePresionado}"
+    (mousedown)="onMouseDown()" (mouseup)="onMouseUp()">
+    <div class="boton__progreso" [style.background-color]="color" [style.filter]="'brightness(40%)'"
+        [style.width.%]="progreso"></div>
+    <span class="boton__loader" [style.display]="progresoCompletado ? 'block' : 'none'"></span>
+    <span class="boton__texto" [style.opacity]="!progresoCompletado ? 1 : 0">
+        {{textoDelBoton || 'Texto de prueba'}}
+    </span>
+</button>
