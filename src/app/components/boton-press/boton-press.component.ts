@@ -29,6 +29,7 @@ export class BotonPressComponent {
         this.progreso += 1;
       } else if (this.progreso === 100) {
         this.progresoCompletado = true;
+        this.cargando = true;
         clearInterval(this.intervaloCreciente);
       }
     }, 20);
