@@ -1,1 +1,4 @@
-<boton-press textoDelBoton="Presionar" color="#a26fe7"></boton-press>
+<boton-press
+    textoInicial="Presionar"
+    [textoProgresoCompletado]="'Progreso Completado'"
+    (progresoCompletadoEmitter)="onProgresoCompletado()"></boton-press>

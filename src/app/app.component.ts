@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { BotonPressComponent } from './components/boton-press/boton-press.component';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'componentes';
+  @ViewChild(BotonPressComponent) btnPress!: BotonPressComponent;
+
+  onProgresoCompletado() {
+    this.btnPress.finalizarCarga();
+  }
+
 }
