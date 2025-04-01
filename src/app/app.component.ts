@@ -15,4 +15,9 @@ export class AppComponent {
     this.btnPress.finalizarCarga();
   }
 
+  onClick(textoBoton: string) {
+    if (textoBoton.toLowerCase() === 'izquierdo')
+      console.log('Caso donde se clickeo el boton de la izquierda');
+  }
+
 }

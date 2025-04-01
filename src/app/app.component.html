@@ -1,4 +1,8 @@
-<boton-press
-    textoInicial="Presionar"
-    [textoProgresoCompletado]="'Progreso Completado'"
-    (progresoCompletadoEmitter)="onProgresoCompletado()"></boton-press>
+<div style="display: flex; flex-direction: column; gap: 50px;">
+    <boton-press
+        textoInicial="Presionar"
+        [textoProgresoCompletado]="'Progreso Completado'"
+        (progresoCompletadoEmitter)="onProgresoCompletado()"></boton-press>
+    
+    <boton-deslizable (clickEmitter)="onClick($event)"></boton-deslizable>
+</div>

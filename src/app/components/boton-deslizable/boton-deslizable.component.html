@@ -1,0 +1,16 @@
+<div class="container" [style.width]="anchoTotal" (tap)="reset()">
+    <div class="deslizable" (panMove)="onPan($event)" (mouseup)="onMouseUp()" 
+        [style.background-color]="colorFrontal"
+        [style.transform]="`translateX(${desplazamientoHorizontal}px)`">
+        <span>{{textoFrontal}}</span>
+    </div>
+    <div class="botones" #botones>
+        <button [style.background-color]="colorBotonIzquierdo" (click)="onClick(textoBotonIzquierdo)">
+            {{textoBotonIzquierdo}}
+        </button>
+        <div class="box"></div>
+        <button [style.background-color]="colorBotonDerecho" (click)="onClick(textoBotonDerecho)">
+            {{textoBotonDerecho}}
+        </button>
+    </div>
+</div>
